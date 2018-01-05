@@ -1,0 +1,488 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>极客熊猫—排行榜</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<style>
+
+    /*统一*/
+    *{
+        padding: 0;
+        margin:0;
+    }
+
+    li{
+        list-style: none;
+    }
+
+    a:hover{
+        cursor: pointer;
+        color:darkred;
+    }
+   /**/
+
+
+    body{
+        width: 100%;
+        min-width: 1400px;
+        color: #fff;
+    }
+    .head{
+        width: 100%;
+        background: #f8b62c;
+        height: 100px;
+    }
+
+    .logo{
+        position: relative;
+        z-index: 10;
+        height: 135px;
+        width: 380px;
+        background: url("./images/logo_small.png")  no-repeat;
+        float: left;
+    }
+
+    .nav{
+        
+        height: 100%;
+        float: left;
+        
+    }
+
+    .head::after{
+        content: ' ';
+        display: block;
+        clear: both;
+        height: 0;
+        visibility: hidden;
+    }
+
+    /*nav*/
+    .nav a{
+        display: block;
+        width: 72px;
+    }
+    .nav li{
+        position: relative;
+        margin:15px 0 15px 50px;
+        bottom:0;
+        transition: all 0.1s linear;
+        width:65px;
+        height: 60px;
+        list-style: none;
+        float: left;
+    }
+    .nav li:hover{
+        bottom:10px;
+        height: 85px;
+
+        
+    }
+    nav span, .login span{
+        display: inline-block;
+        width: 72px;
+        margin:0 auto;
+        text-align:center;
+        color:#fff;
+        font-size: 18px;
+    }
+
+
+    .nav li i, .login i{
+        display: block;
+        margin:0 auto;
+        width:50px;
+        height: 50px;
+    }
+    .news{background:url("./images/class.png")}
+    .class{background:url("./images/class.png")}
+    .map{background: url("./images/map.png")}
+    .rank{background: url("./images/ranking-list.png")}
+    .exhibition{background: url("./images/exhibition.png")}
+    .about{background: url("./images/about.png")}
+
+    /*sign_in*/
+    .login{
+        width: 200px;
+        height: 100%;
+        float: right;
+    }
+    .sign_in{background:url("./images/girl.png") 8px/auto 100% no-repeat;}
+    .sign_up{background:url("./images/boy.png") 8px/auto 100% no-repeat;}
+
+    .login li{
+        margin-top: 15px;
+        float: left;
+        list-style: none;
+
+    }
+
+    /* main */
+    main{
+        box-sizing: border-box;
+        padding:1px;
+        width: 100%;
+        
+        min-height: 675px;
+        background:url("./images/ranking-list-bg.png") 0/105% 100% no-repeat;
+        position: relative;
+    }
+    .rank_list{
+        position: relative;
+        width:90%;
+        margin:50px auto;
+    }
+
+    .rank_title{
+        margin:0 auto;
+        width:300px;
+        font-size: 28px; 
+        color: #E60013;
+        font-weight: 400;
+    }
+
+    .rank_detail table{
+        border:none;
+        height: 500px;
+        color:#fff;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .rank_detail th,.rank_detail tr,.rank_detail td{
+        height: 42px;
+    }
+    .rank_detail th{
+        border:none;
+    }
+
+    .rank_detail td{
+        padding:1px;
+        border:none;
+    }
+
+    .rank_detail tr:nth-child(odd){
+        background: #C9A063;
+    }
+
+    .rank_detail tr:nth-child(even){
+        background-color: #f8b62c;
+    }
+
+    .rank_pic{
+        display: inline-block;
+        height: 42px;
+        width: 37px;
+        background: url('./images/huangjin-ico.png') 0/auto 100% no-repeat;
+        box-sizing: border-box;
+        border-top:4px solid #f8b62c;
+    }
+    .rank_name {
+        display: inline-block;
+        position: relative;
+        top:-10px;
+        margin-right: 3px;
+    }
+    
+    .team_point{
+        width:90%;
+        margin:50px auto;
+    }
+
+    .team_title{
+        width:200px;
+        margin: 10px auto;
+        color: #595857;
+        font-size: 20px;
+    }
+
+    .update_time{
+        float: right;
+        color:#595857;
+        letter-spacing: 2px;
+        font-size: 12px;
+        
+    }
+    .clear_float{
+        width:100%;
+        height: 5px;
+        clear: both;
+    }
+    .team_table tr,.team_table th,.team_table td{
+        height: 40px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 20px;
+    }
+    .team_table th:nth-child(odd){
+        background: #056FB8;
+    }
+    .team_table th:nth-child(even){
+        background: #15AE67;
+    }
+
+    
+
+
+    /*footer*/
+    footer{
+        width: 100%;
+        height: 150px;
+        background-color: #595857;
+        padding: 20px 0 0 100px;
+        box-sizing: border-box;
+    }
+
+    footer div{
+        float: left;
+        margin-right: 100px;
+    }
+    footer span,footer a{
+        display: block;
+        margin:10px;
+        font-size: 13px;
+    }
+    
+    .font-big{
+        font-size: 17px !important;
+    }
+
+</style>
+</head>
+<body>
+
+    <header class="head">
+        <div class="logo">
+            
+        </div>
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="#" target="_self" >
+                        <i class="news"></i>
+                        <span>新闻</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./gongkaike.html" target="_self">
+                        <i class="class"></i>
+                        <span>公开课</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_self" onclick="window.open('','scratch_gui','top:100px;width:1000px;height:800px;')">
+                        <i class="map"></i>
+                        <span>闯关地图</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./rank-list.html" target="_self">
+                        <i class="rank"></i>
+                        <span>排行榜</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./exhibition.html" target="_self">
+                        <i class="exhibition"></i>
+                        <span>展厅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_self">
+                        <i class="about"></i>
+                        <span>关于</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+        <div class="login">
+            <ul>
+                <li>
+                    <a href="#" target="_self">
+                        <i class="sign_in"></i>
+                        <span>登录</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_self">
+                        <i class="sign_up"></i>
+                        <span>注册</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <img src="./images/yun.png" style="position:absolute;left:0;top:100px; z-index:0;width:100%;">
+        <div class="rank_list">
+            <h2 class="rank_title"><i style="position: relative;top: 10px;margin-right: 10px;display:inline-block;background:url('./images/phb-ico.png') 0/contain no-repeat;width:50px;height:50px;"></i>极客勇士排行榜</h2>
+            <div class="rank_detail">
+                <table border="1">
+                    <tr style="background:transparent;color:black;font-size:20px;font-weight:400;">
+                        <th style="width:145px;">排名</th>
+                        <th style="width:395px;">用户昵称</th>
+                        <th style="width:285px;">战队</th>
+                        <th style="width:145px;">极值</th>
+                        <th style="width:410px;">等级</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>梦幻家园</td>
+                        <td>闪电豹</td>
+                        <td>25</td>
+                        <td><span class="rank_name">黄金勇士</span><i class="rank_pic"></i></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="team_point">
+            <div class="team_title">战队综合评分</div>
+            <small class="update_time">更新时间：2018/11/12</small>
+            <div class="clear_float"></div>
+            <div class="team_table">
+                <table>
+                    <tr>
+                        <th style="width:136px;"></th>
+                        <th style="width:310px;">表现</th>
+                        <th style="width:310px;">纪律</th>
+                        <th style="width:310px;">功夫</th>
+                        <th style="width:310px;">最终得分</th>
+                    </tr>
+                    <tr>
+                        <td style="background:#15AE67;">极客之家</td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                    </tr>
+                    <tr>
+                        <td style="background:#056FB8;">闪电豹</td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                    </tr>
+                    <tr>
+                        <td style="background:#15AE67;">成功</td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                    </tr>
+                    <tr>
+                        <td style="background:#056FB8;">大吉大利</td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                    </tr>
+                    <tr>
+                        <td style="background:#15AE67;">今晚吃鸡</td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                        <td style="background:#f8b62c"><img src="./images/pingji.png"></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+
+        
+
+
+
+
+    </main>
+    <footer>
+        <div class="contact">
+            <span class="font-big">联系我们</span>
+            <span>商务合作与课程咨询：0451-57788876</span>
+            <span>地址：黑龙江省哈尔滨市贵新街170号东北亚大厦12层</span>
+            <span>微信号：极客熊猫</span>
+        </div>
+
+        <div class="cooperate">
+            <span class="font-big">合作方式</span>
+            <span>商务：hitinnovationcenter@hitbigdatagroup.com</span>
+            <span>投资：0451-57788876</span>
+        </div>
+        <div class= "link">
+            <a>新闻</a>
+            <a>加入我们</a>
+        </div>
+
+    </footer>
+    <small style="text-align:center;display:block;width:100%;background:#595857;font-size:10px;">2017 HIT Big Data Innovition Group/ 哈工大大数据创新中心</small>
+
+</body>
+
+
+</html>

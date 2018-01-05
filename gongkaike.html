@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>极客熊猫—首页</title>
+<title>极客熊猫—公开课</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <style>
 
@@ -11,6 +11,7 @@
     *{
         padding: 0;
         margin:0;
+
     }
 
     li{
@@ -28,6 +29,7 @@
         width: 100%;
         min-width: 1400px;
         color: #fff;
+        font-family:Microsoft YaHei!important;
     }
     .head{
         width: 100%;
@@ -122,44 +124,71 @@
     /* main */
     main{
         width: 100%;
-        height: calc(100vh - 100px);
-        background:url("./images/index-bg.jpg") 0/cover no-repeat;
+        height: 1000px;
+        background:url("./images/zt-bg.png") 0/cover no-repeat;
         position: relative;
-        min-height: 675px;
-    }
-    .m_news{
+        padding:1px;
         box-sizing: border-box;
-        padding: 20px 5px 5px 30px;
-        position: absolute;
-        width: 344px;
-        height: 470px;
-        background:rgba(35,25,22,0.41);
-        bottom:5px;
-        right: 0;
-        border-radius: 7px;
     }
-    .news_tab li{
+
+    .map_list{
+        position: relative;
+        width: 80%;
+        min-width: 1200px;
+        margin:40px auto;
+        border:1px solid #F8B62D;
+        border-radius: 40px;
+        height: 380px;
+        padding:20px 40px;
+        box-sizing: border-box;
+        background: #fff;
+    }
+
+    .video_detail{
+        margin:35px 40px;
+        
+        height: 230px;
+        
+        
+    }
+
+    .video_l{
+        height: 220px;
+        width:320px;
+        background-color: #2EA7E0;
+        margin:10px 1px;
+        border-radius: 20px;
         float: left;
-        margin:5px 40px 10px 5px;
+    }
+    .video_r{
+        float: left;
+       
+        margin: 15px 0 5px 70px;
     }
 
-    .news_tab::after{
-        content: ' ';
-        display: block;
-        clear: both;
-        visibility: none;
-        height: 0;
+    .video_title{
+        color:#595857;
+        font-size: 25px;
+        font-weight: 400;
+        margin-bottom: 15px;
     }
-
-    .news_time{
-        float: right;
-    }
-    
-    .news_detail li{
-        margin:10px 0 10px 0; 
+    .video_ex{
+        color:#9FA0A0;
         font-size: 12px;
     }
+    
+    .video_episo{
+        padding:20px 0;
+    }
 
+    .video_episo button{
+        height: 50px;
+        width: 50px;
+        margin-right: 10px;
+        background:#f8b62c;
+        color:#fff;
+        font-size: 20px;
+    }
 
     
 
@@ -187,13 +216,14 @@
         font-size: 17px !important;
     }
 
+
 </style>
 </head>
 <body>
 
     <header class="head">
         <div class="logo" style="position:relative">
-            <a href="./index.html" style="position:absolute;top:0;left:0;right:0;bottom:0;"></a>
+                <a href="./index.html" style="position:absolute;top:0;left:0;right:0;bottom:0;"></a>
             
         </div>
         <nav class="nav">
@@ -207,7 +237,7 @@
                 <li>
                     <a href="./gongkaike.html" target="_self">
                         <i class="class"></i>
-                        <span>注册</span>
+                        <span>公开课</span>
                     </a>
                 </li>
                 <li>
@@ -248,40 +278,62 @@
                 <li>
                     <a href="#" target="_self">
                         <i class="sign_up"></i>
-                        <span>公开课</span>
+                        <span>注册</span>
                     </a>
                 </li>
             </ul>
         </div>
     </header>
     <main>
-        <img src="./images/yun.png">
-        <div class="m_news">
-            <div class = "news_tab">
-                <ul>
-                    <li><a>最新</a></li>
-                    <li><a>新闻</a></li>
-                    <li><a>公告</a></li>
-                    <li><a>媒体</a></li>
-                </ul>
-            </div>
-            <div class = "news_detail">
-                <ul>
-                    <li>
-                            <a class="news_title"> <span class="news_type">【新闻】</span>极客勇士排行榜</a><span class="news_time">11/17</span>
-                    </li>
-                    <li>
-                            <a class="news_title"> <span class="news_type">【新闻】</span>全球直播！JIKE教程开课啦</a><span class="news_time">11/16</span>
-                    </li>
-                    <li>
-                            <a class="news_title"> <span class="news_type">【新闻】</span>地图开通了新路线！</a><span class="news_time">12/3</span>
-                    </li>
-                    <li>
-                            <a class="news_title"> <span class="news_type">【新闻】</span>最新评语与极值结算</a><span class="news_time">12/23</span>
-                    </li>
-                </ul>
+        <img src="./images/yun.png" style="position:absolute;left:0;top:100px; z-index:0;width:100%;">
+        <div class="map_list">
+            <h3 style="font-size:20px;color:#F8B62D;font-weight:400;">视频公开课</h3>
+            <hr style="height:2px;background:#F8B62D;margin:5px 0 0 -10px;border:none;">
+            <div class="video_detail">
+                <div class="video_l">video</div>
+                <div class="video_r">
+                    <h3 class="video_title">1.冒险开始</h3>
+                    <small class="video_ex">来认识Scratch2.0的操作页面吧</small>
+                    <div class="video_episo">
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                        <button>7</button>
+                        <button>8</button>
+                        <button>9</button>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="map_list">
+                <h3 style="font-size:20px;color:#F8B62D;font-weight:400;">视频公开课</h3>
+                <hr style="height:2px;background:#F8B62D;margin:5px 0 0 -10px;border:none;">
+                <div class="video_detail">
+                    <div class="video_l">video</div>
+                    <div class="video_r">
+                        <h3 class="video_title">1.冒险开始</h3>
+                        <small class="video_ex">来认识Scratch2.0的操作页面吧</small>
+                        <div class="video_episo">
+                            <button>1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button>5</button>
+                            <button>6</button>
+                            <button>7</button>
+                            <button>8</button>
+                            <button>9</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
     </main>
     <footer>
         <div class="contact">

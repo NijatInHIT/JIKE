@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>极客熊猫—首页</title>
+<title>极客熊猫—展厅</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <style>
 
@@ -121,43 +121,48 @@
 
     /* main */
     main{
+        padding:1px;
+        box-sizing: border-box;
         width: 100%;
-        height: calc(100vh - 100px);
-        background:url("./images/index-bg.jpg") 0/cover no-repeat;
+        
+        background:url("./images/zt-bg.png") 0/cover no-repeat;
         position: relative;
         min-height: 675px;
     }
-    .m_news{
-        box-sizing: border-box;
-        padding: 20px 5px 5px 30px;
-        position: absolute;
-        width: 344px;
-        height: 470px;
-        background:rgba(35,25,22,0.41);
-        bottom:5px;
-        right: 0;
-        border-radius: 7px;
-    }
-    .news_tab li{
-        float: left;
-        margin:5px 40px 10px 5px;
+
+    .exh_contain{
+        margin:100px auto;
+        background: #f8b62c;
+        border-radius: 55px;
+        width:70%;
+        min-width: 1020px;
+        padding:50px;
+        position: relative;
     }
 
-    .news_tab::after{
-        content: ' ';
-        display: block;
-        clear: both;
-        visibility: none;
-        height: 0;
-    }
-
-    .news_time{
+    .choose_btn{
         float: right;
+        margin:30px 30px;
     }
-    
-    .news_detail li{
-        margin:10px 0 10px 0; 
-        font-size: 12px;
+    .works{
+        width:319px;
+        height: 222px;
+        background:#fff;
+        float: left;
+        margin:0 20px 20px 0;
+        border-radius: 30px;
+    }
+    .clear_float{
+        height: 3px;
+        width: 100%;
+        clear: both;
+    }
+    .exh_contain::after{
+        display: block;
+        height: 0;
+        visibility: none;
+        clear: both;
+        content: ' ';
     }
 
 
@@ -207,7 +212,7 @@
                 <li>
                     <a href="./gongkaike.html" target="_self">
                         <i class="class"></i>
-                        <span>注册</span>
+                        <span>公开课</span>
                     </a>
                 </li>
                 <li>
@@ -248,39 +253,30 @@
                 <li>
                     <a href="#" target="_self">
                         <i class="sign_up"></i>
-                        <span>公开课</span>
+                        <span>注册</span>
                     </a>
                 </li>
             </ul>
         </div>
     </header>
     <main>
-        <img src="./images/yun.png">
-        <div class="m_news">
-            <div class = "news_tab">
-                <ul>
-                    <li><a>最新</a></li>
-                    <li><a>新闻</a></li>
-                    <li><a>公告</a></li>
-                    <li><a>媒体</a></li>
-                </ul>
+        <img src="./images/yun.png" style="position:absolute;left:0;top:100px; z-index:0;width:100%;">
+        <div class="exh_contain">
+            <h3></h3>
+            <div class="choose_btn">
+                <a> 最多点击</a>|
+                <a> 最新发布</a>
             </div>
-            <div class = "news_detail">
-                <ul>
-                    <li>
-                            <a class="news_title"> <span class="news_type">【新闻】</span>极客勇士排行榜</a><span class="news_time">11/17</span>
-                    </li>
-                    <li>
-                            <a class="news_title"> <span class="news_type">【新闻】</span>全球直播！JIKE教程开课啦</a><span class="news_time">11/16</span>
-                    </li>
-                    <li>
-                            <a class="news_title"> <span class="news_type">【新闻】</span>地图开通了新路线！</a><span class="news_time">12/3</span>
-                    </li>
-                    <li>
-                            <a class="news_title"> <span class="news_type">【新闻】</span>最新评语与极值结算</a><span class="news_time">12/23</span>
-                    </li>
-                </ul>
-            </div>
+            <div class="clear_float"></div>
+            <div class="works"></div>
+            <div class="works"></div>
+            <div class="works"></div>
+            <div class="works"></div>
+            <div class="works"></div>
+            <div class="works"></div>
+            <div class="works"></div>
+            <div class="works"></div>
+            <div class="works"></div>
         </div>
     </main>
     <footer>
